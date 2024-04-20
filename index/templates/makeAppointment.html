@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Appointment</title>
+</head>
+<body>
+    <h2>Make Appointment</h2>
+    <form action="/makeAppointment" method="post">
+        {% csrf_token %}
+        <label for="doctor">Select Doctor:</label><br>
+        <select id="doctor" name="doctor">
+            <!-- Options for doctors would be dynamically populated here -->
+            <option value="1">Doctor 1</option>
+            <option value="2">Doctor 2</option>
+            <!-- Add more options as needed -->
+        </select><br>
+        
+        <input type="submit" value="Make Appointment">
+    </form>
+</body>
+</html>
