@@ -1,36 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Doctor</title>
-</head>
-<body>
-    <h2>Register Doctor</h2>
-    <form action="/accounts/registerDoctor" method="post">
-        {% csrf_token %}
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br>
+
+{% extends 'layout.html' %}
+{% block body %}
+    <div class="container">
         
-        <label for="speciality">Speciality:</label><br>
-        <input type="text" id="speciality" name="speciality"><br>
         
-        <label for="department">Department:</label><br>
-        <input type="text" id="department" name="department"><br>
-        
-        <label for="qualification">Qualification:</label><br>
-        <input type="text" id="qualification" name="qualification"><br>
-        
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br>
-        
-        <label for="contact">Contact:</label><br>
-        <input type="text" id="contact" name="contact"><br>
-        
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password"><br><br>
-        
-        <input type="submit" value="Submit">
-    </form>
-</body>
-</html>
+        <form action="/accounts/registerDoctor" method="post" style="max-width: 400px; margin: 0 auto;" class="form px-3 my-5 shadow">
+            <h4 class="text-center mt-5 pt-3">Register Doctor</h4>
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="medicalLicenseNumber" name="medicalLicenseNumber" placeholder="Medical License Number">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="speciality" name="speciality" placeholder="Speciality">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="subspeciality" name="subspeciality" placeholder="Subspeciality">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="department" name="department" placeholder="Department">
+            </div>
+
+            <div class="form-group">
+                <textarea class="form-control" id="qualification" name="qualification" placeholder="Qualification"></textarea>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="workplace" name="workplace" placeholder="Workplace">
+            </div>
+
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+            </div>
+
+            <div class="form-group">
+                <input type="number" class="form-control" id="contact" name="contact" placeholder="Contact">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+            </div>
+            
+            <input type="submit" class="btn btn-primary mb-3" value="Submit">
+        </form>
+    </div>
+{% endblock %}

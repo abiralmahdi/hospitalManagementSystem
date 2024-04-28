@@ -1,40 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Doctor</title>
-</head>
-<body>
-    <h2>Register Patient</h2>
-    <form action="/accounts/registerPatient" method="post">
-        {% csrf_token %}
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br>
-        
-        <label for="dateOfBirth">Date of Birth:</label><br>
-        <input type="date" id="dateOfBirth" name="dateOfBirth"><br>
-        
-        <label for="gender">Gender:</label><br>
-        <select id="gender" name="gender">
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-        </select><br>
-        
-        <label for="address">Address:</label><br>
-        <input type="text" id="address" name="address"><br>
-        
-        <label for="phoneNumber">Phone Number:</label><br>
-        <input type="text" id="phoneNumber" name="phoneNumber"><br>
-        
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br>
-        
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password"><br><br>
-        
-        <input type="submit" value="Submit">
-    </form>
-</body>
-</html>
+{% extends 'layout.html' %}
+{% block body %}
+    <div class="container">
+        <form action="/accounts/registerPatient" method="post" style="max-width: 400px; margin: 0 auto;" class="form px-3 pt-1 my-5 shadow">
+            {% csrf_token %}
+            <h4 class="text-center mt-5">Register Patient</h4>
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" placeholder="Date of Birth">
+            </div>
+            <div class="form-group">
+                <input type="date" class="form-control" id="dateOfDeath" name="dateOfDeath" placeholder="Date of Death">
+            </div>
+            <div class="form-group">
+                <select class="form-control" id="gender" name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="address" name="address" placeholder="Address">
+            </div>
+            <div class="form-group">
+                <input type="tel" class="form-control" id="contact" name="contact" placeholder="Contact">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="nationality" name="nationality" placeholder="Nationality">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+            </div>
+            <input type="submit" class="btn btn-primary mb-3" value="Submit">
+        </form>
+    </div>
+{% endblock %}

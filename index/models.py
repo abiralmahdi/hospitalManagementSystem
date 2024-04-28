@@ -18,4 +18,3 @@ class Disposals(models.Model):
     appointment = models.ForeignKey(Appointment, on_delete=models.CASCADE)
     disease = models.TextField()
     prescription = models.TextField()
-

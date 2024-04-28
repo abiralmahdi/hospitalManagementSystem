@@ -6,5 +6,7 @@ from .import views
 urlpatterns = [
     path('registerDoctor',views.registerDoctor,name='registerDoctor'),
     path('registerPatient',views.registerPatient,name='registerPatient'),
+    path('login',views.loginUser,name='login'),
+    path('logout',views.logoutUser,name='logout'),
     
 ]
